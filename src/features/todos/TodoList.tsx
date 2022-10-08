@@ -31,21 +31,21 @@ const TodoList: React.FC<TodosProps> = (props) => {
     const addTodoMutation = useMutation(addTodo, {
         onSuccess: () => {
             console.log("OnSuccess of addTodoMutation");
-            // Invalidates the `todo` cach when we add a new todo and then it triggers the refetch so we get the new todos list with the new todo added.
+            // Invalidates the `todo` cache when we add a new todo and then it triggers the refetch so we get the new todos list with the new todo added.
             queryClient.invalidateQueries("todos");
         }
     });
 
     const updateTodoMutation = useMutation(updateTodo, {
         onSuccess: () => {
-            // Invalidates the `todo` cach when we update a new todo and then it triggers the refetch so we get the new todos list with the todo updated.
+            // Invalidates the `todo` cache when we update a new todo and then it triggers the refetch so we get the new todos list with the todo updated.
             queryClient.invalidateQueries("todos");
         }
     });
 
     const deleteTodoMutation = useMutation(deleteTodo, {
         onSuccess: () => {
-            // Invalidates the `todo` cach when we delete a  todo and then it triggers the refetch so we get the new todos list with the todo deleted.
+            // Invalidates the `todo` cache when we delete a  todo and then it triggers the refetch so we get the new todos list with the todo deleted.
             queryClient.invalidateQueries("todos");
         }
     });
